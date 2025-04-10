@@ -15,7 +15,6 @@ This tool analyzes card synergies in *Magic: The Gathering Arena* (MTGA) using d
 
 ## Requirements
 
-- Python 3.7+
 - Required libraries:
   - pandas
   - numpy
