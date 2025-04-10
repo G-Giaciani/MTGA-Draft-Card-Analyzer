@@ -13,7 +13,7 @@ import mplcursors
 start_time = time.time()
 
 chunk_start_time = time.time()
-MAX_CHUNKS = 50
+MAX_CHUNKS = 300
 chunk_iterator = pd.read_csv("game_data_public.DFT.PremierDraft.csv", chunksize=1000)
 
 chunks = []
@@ -66,7 +66,7 @@ def get_cards_by_set_and_rarity(set_code, rarity):
                 break
                 
     except KeyboardInterrupt:
-        print("\Search interrupted by user.")
+        print("\nSearch interrupted by user.")
     with open(cache_file, 'w') as f:
         json.dump(all_cards, f)
         
@@ -126,7 +126,7 @@ my_cards = []
 #     else:
 #         i = i - 1
 
-print(f"\Synergy Card: {synergy_card}")
+print(f"\nSynergy Card: {synergy_card}")
 
 for cards in my_cards:
     if cards in plotDataFrame.index:
@@ -146,7 +146,7 @@ for cards in my_cards:
 end_time = time.time()
 execution_time = end_time - start_time
 
-print(f"\Time to make API request: {api_time:.2f} seconds")
+print(f"\nTime to make API request: {api_time:.2f} seconds")
 print(f"Time to calculate stats: {calc_time:.2f} seconds")
 print(f"Total execution time: {execution_time:.2f} seconds")
 print(f"Chunk time: {chunk_time:.2f} seconds")
